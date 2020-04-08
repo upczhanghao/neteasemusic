@@ -43,7 +43,7 @@ export default {
         this.personalized = data.result
       })
       .catch(function (err) {
-        console.log(err)
+        throw err
       })
     getNewAlbum()
       .then((data) => {
@@ -51,7 +51,7 @@ export default {
         this.albums = data.albums.splice(0, 6)
       })
       .catch(function (err) {
-        console.log(err)
+        throw err
       })
     getNewSong()
       .then((data) => {
