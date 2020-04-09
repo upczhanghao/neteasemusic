@@ -35,6 +35,8 @@ export default {
     width: 100%;
     @include bg_sub_color();
     .top{
+      padding: 0 20px;
+      box-sizing: border-box;
       @include font_size($font_large);
       line-height: 80px;
       height: 80px;

@@ -1,6 +1,6 @@
 <template>
 <div class="header">
-    <div class="left"></div>
+  <div class="left"></div>
   <p class="center">网易云音乐</p>
   <div class="right"></div>
 </div>
