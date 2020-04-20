@@ -1,16 +1,16 @@
 <template>
-<div class="normalPlayer">
-  <div class="top">
-    <div class="left"></div>
-    <div class="center">
-      <p>歌曲名</p>
-      <p>歌手</p>
+  <div class="normalPlayer">
+    <div class="top">
+      <div class="left"></div>
+      <div class="center">
+        <p>歌曲名</p>
+        <p>歌手</p>
+      </div>
+      <div class="right"></div>
     </div>
-    <div class="right"></div>
+    <div class="center"></div>
+    <div class="bottom"></div>
   </div>
-  <div class="center"></div>
-  <div class="bottom"></div>
-</div>
 </template>
 
 <script>
@@ -20,41 +20,42 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import "../../assets/css/variable";
-  @import "../../assets/css/mixin";
-.normalPlayer{
+@import "../../assets/css/variable";
+@import "../../assets/css/mixin";
+.normalPlayer {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #f00;
-  .top{
+  .top {
     height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    .left{
+    .left {
       width: 84px;
       height: 84px;
       margin-top: 8px;
-      @include bg_img('../../assets/images/down');
-      color: #FFFFFF;
+      @include bg_img("../../assets/images/down");
+      color: #ffffff;
     }
-    .center{
+    .center {
       @include font_size($font_medium_s);
-      color: #FFFFFF;
+      color: #ffffff;
       font-weight: bold;
       line-height: 45px;
       margin-top: 10px;
-      p{
+      p {
         text-align: center;
       }
-    } .right{
-        width: 84px;
-        height: 84px;
-        margin-top: 8px;
-      }
+    }
+    .right {
+      width: 84px;
+      height: 84px;
+      margin-top: 8px;
+    }
   }
 }
 </style>
