@@ -1,12 +1,13 @@
 <template>
-  <div class="rank">rank</div>
+<div class="bottom"></div>
 </template>
 
 <script>
 export default {
-  name: 'Rank'
+  name: 'BottomPlayer'
 }
 </script>
 
 <style scoped>
+
 </style>

@@ -1,21 +1,22 @@
 <template>
   <div class="normalPlayer">
-    <div class="top">
-      <div class="left"></div>
-      <div class="center">
-        <p>歌曲名</p>
-        <p>歌手</p>
-      </div>
-      <div class="right"></div>
-    </div>
-    <div class="center"></div>
-    <div class="bottom"></div>
+    <TopPlayer></TopPlayer>
+    <MediumPlayer></MediumPlayer>
+    <BottomPlayer></BottomPlayer>
   </div>
 </template>
 
 <script>
+import TopPlayer from './MainPlayer/TopPlayer'
+import MediumPlayer from './MainPlayer/MediumPlayer'
+import BottomPlayer from './MainPlayer/BottomPlayer'
 export default {
-  name: 'NormalPlayer'
+  name: 'NormalPlayer',
+  components: {
+    TopPlayer,
+    MediumPlayer,
+    BottomPlayer
+  }
 }
 </script>
 
@@ -29,33 +30,5 @@ export default {
   right: 0;
   bottom: 0;
   background-color: #f00;
-  .top {
-    height: 100px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    .left {
-      width: 84px;
-      height: 84px;
-      margin-top: 8px;
-      @include bg_img("../../assets/images/down");
-      color: #ffffff;
-    }
-    .center {
-      @include font_size($font_medium_s);
-      color: #ffffff;
-      font-weight: bold;
-      line-height: 45px;
-      margin-top: 10px;
-      p {
-        text-align: center;
-      }
-    }
-    .right {
-      width: 84px;
-      height: 84px;
-      margin-top: 8px;
-    }
-  }
 }
 </style>
