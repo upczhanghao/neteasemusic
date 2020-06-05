@@ -2,10 +2,10 @@
   <div class="center">
     <swiper ref="Swiper1" :options="swiperOptions">
       <swiper-slide>
-        <div>1111</div>
+        <div>歌曲页面</div>
       </swiper-slide>
       <swiper-slide>
-        <div>222222</div>
+        <div>歌词页面</div>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
