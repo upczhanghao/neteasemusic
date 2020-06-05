@@ -10,8 +10,8 @@ export default {
   name: 'ScrowView',
   mounted () {
     this.iscroll = new IScroll(this.$refs.wrapper, {
-      mouseWheel: true,
-      scrollbars: false,
+      mouseWheel: true, // 开启鼠标滚轮
+      scrollbars: false, // 禁用滚动条
       probeType: 3,
       // 解决拖拽卡顿问题
       scrollX: false,
@@ -25,12 +25,9 @@ export default {
       MutationObserver构造函数只要监听到了指定内容发生了变化, 就会执行传入的回调函数
       mutationList: 发生变化的数组
       observer: 观察者对象
-      * */
+    */
     const observer = new MutationObserver((mutationList, observer) => {
-      // console.log(mutationList)
-      // console.log(this.iscroll.maxScrollY)
       this.iscroll.refresh()
-      // console.log(this.iscroll.maxScrollY)
     })
     // 2.告诉观察者对象我们需要观察什么内容
     const config = {
@@ -42,7 +39,7 @@ export default {
     /*
       第一个参数: 告诉观察者对象我们需要观察谁
       第二个参数: 告诉观察者对象我们需要观察什么内容
-      * */
+    */
     observer.observe(this.$refs.wrapper, config)
   },
   methods: {
