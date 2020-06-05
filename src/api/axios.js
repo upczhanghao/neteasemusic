@@ -27,5 +27,16 @@ export default {
           reject(error)
         })
     })
+  },
+  all: function (url = '', data = {}) {
+    return new Promise((resolve, reject) => {
+      axios.all(url, data)
+        .then((response) => {
+          resolve(response)
+        })
+        .catch((err) => {
+          reject(err)
+        })
+    })
   }
 }
