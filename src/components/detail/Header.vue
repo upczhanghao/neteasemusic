@@ -35,6 +35,11 @@ export default {
   @include bg_color();
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 999;
+  // position: fixed;
+  // top: 0;
+  // z-index: 999;
   .left {
     width: 84px;
     height: 84px;

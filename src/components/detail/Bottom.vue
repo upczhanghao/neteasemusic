@@ -16,15 +16,6 @@
 <script>
 export default {
   name: 'Bottom',
-  data () {
-    return {
-    }
-  },
-  computed: {
-  },
-  watch: {
-  },
-  methods: {},
   props: {
     list: {
       type: Array,
@@ -42,7 +33,7 @@ export default {
     width: 100%;
     li{
       width: 100%;
-      height: 100px;
+      height: 140px;
       padding: 20px;
       box-sizing: border-box;
       @include bg_sub_color();
@@ -51,8 +42,8 @@ export default {
     .fir{
       display: flex;
       align-items: center;
-      border-top-left-radius: 50px;
-      border-top-right-radius: 50px;
+      border-top-left-radius: 70px;
+      border-top-right-radius: 70px;
       .icon{
         width: 60px;
         height: 60px;
@@ -68,11 +59,13 @@ export default {
       h3{
         @include font_size($font_medium_s);
         @include font_color();
+        line-height: 50px;
       }
       p{
         @include font_size($font_samll);
         @include font_color();
         opacity: 0.7;
+        line-height: 50px;
         // margin-top: 10px;
       }
     }

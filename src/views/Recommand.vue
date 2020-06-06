@@ -4,13 +4,16 @@
     <ScrowView>
       <div>
         <Banner :banners="banners"></Banner>
-        <Personalized :personalized="personalized" :title="'推荐歌单'" @select="fatherSelectItem"></Personalized>
-        <Personalized :personalized="albums" :title="'最新专辑'"></Personalized>
+        <!-- 通过:type实现显示歌单/专辑切换功能 -> 在Detail组件中对type的属性进行判断,根据取值分别用不同方法获取数据 -->
+        <Personalized :personalized="personalized" :title="'推荐歌单'" @select="fatherSelectItem" :type="'personalized'"></Personalized>
+        <Personalized :personalized="albums" :title="'最新专辑'" @select="fatherSelectItem" :type="'albums'"></Personalized>
         <NewSongs :songs="songs"></NewSongs>
       </div>
     </ScrowView>
   </div>
-  <router-view></router-view>
+  <transition>
+    <router-view></router-view>
+  </transition>
 </div>
 </template>
 
@@ -90,10 +93,9 @@ export default {
     }
   },
   methods: {
-    fatherSelectItem (id) {
-      // console.log(id)
+    fatherSelectItem (id, type) {
       this.$router.push({
-        path: `/recommand/detail/${id}`
+        path: `/recommand/detail/${id}/${type}`
       })
     }
   }
@@ -107,10 +109,29 @@ export default {
     left:0;
     right: 0;
     bottom: 0;
-    overflow: hidden;
+    // overflow: hidden;
     .recommend-warpper{
       width: 100%;
       height: 100%;
+      overflow: hidden;
     }
+  }
+  .v-enter{
+    transform: translateX(100%);
+  }
+  .v-enter-to{
+    transform: translateX(0%);
+  }
+  .v-enter-active{
+    transition: transform 0.7s ease-out;
+  }
+  .v-leave{
+    transform: translateX(0%);
+  }
+  .v-leave-to{
+    transform: translateX(100%);
+  }
+  .v-leave-active{
+    transition: transform 0.7s ease-out;
   }
 </style>

@@ -14,8 +14,7 @@ const routes = [
     component: () => import('../views/Recommand'),
     children: [
       {
-        path: 'detail/:id',
-        name: 'Detail',
+        path: 'detail/:id/:type',
         component: () => import('../views/Detail')
       }
     ]

@@ -25,11 +25,16 @@ export default {
       type: String,
       default: '',
       require: true
+    },
+    type: {
+      type: String,
+      default: '',
+      require: true
     }
   },
   methods: {
     selectItem (id) {
-      this.$emit('select', id)
+      this.$emit('select', id, this.type)
     }
   }
 }
