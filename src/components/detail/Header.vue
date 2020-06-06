@@ -1,20 +1,34 @@
 <template>
   <div class="header">
-    <div class="left"></div>
-    <p class="center">网易云音乐</p>
+    <div class="left" @click.stop="back"></div>
+    <p class="center">{{ title }}</p>
     <div class="right"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: {
+    title: {
+      type: String,
+      default: '',
+      require: true
+    }
+  },
+  methods: {
+    back () {
+      this.$router.push({
+        path: '/recommand'
+      })
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
-@import "../assets/css/variable";
-@import "../assets/css/mixin";
+@import "../../assets/css/variable";
+@import "../../assets/css/mixin";
 .header {
   height: 100px;
   width: 100%;
@@ -25,18 +39,19 @@ export default {
     width: 84px;
     height: 84px;
     margin-top: 8px;
-    @include bg_img("../assets/images/logo");
+    @include bg_img("../../assets/images/back");
     color: #ffffff;
   }
   .right {
     width: 84px;
     height: 84px;
     margin-top: 8px;
-    @include bg_img("../assets/images/account");
+    @include bg_img("../../assets/images/more");
     color: #ffffff;
   }
   .center {
-    @include font_size($font_large);
+    @include font_size($font_medium);
+    @include no-wrap();
     color: #ffffff;
     font-weight: bold;
     line-height: 100px;

@@ -4,18 +4,19 @@
     <ScrowView>
       <div>
         <Banner :banners="banners"></Banner>
-        <Personalized :personalized="personalized" :title="'推荐歌单'"></Personalized>
+        <Personalized :personalized="personalized" :title="'推荐歌单'" @select="fatherSelectItem"></Personalized>
         <Personalized :personalized="albums" :title="'最新专辑'"></Personalized>
         <NewSongs :songs="songs"></NewSongs>
       </div>
     </ScrowView>
   </div>
+  <router-view></router-view>
 </div>
 </template>
 
 <script>
 // 导入滚动组件
-import ScrowView from '../components/ScrowView'
+import ScrowView from '../components/common/ScrowView'
 import Banner from '../components/Recommand/Banner'
 import NewSongs from '../components/Recommand/NewSongs'
 import Personalized from '../components/Recommand/Personalized'
@@ -87,6 +88,14 @@ export default {
       albums: [],
       songs: []
     }
+  },
+  methods: {
+    fatherSelectItem (id) {
+      // console.log(id)
+      this.$router.push({
+        path: `/recommand/detail/${id}`
+      })
+    }
   }
 }
 </script>
@@ -98,7 +107,7 @@ export default {
     left:0;
     right: 0;
     bottom: 0;
-    // overflow: hidden;
+    overflow: hidden;
     .recommend-warpper{
       width: 100%;
       height: 100%;

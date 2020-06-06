@@ -3,7 +3,7 @@
     <div class="top">{{this.title}}</div>
     <div class="bottom">
       <ul>
-        <li v-for="item in personalized" :key="item.id">
+        <li v-for="item in personalized" :key="item.id" @click="selectItem(item.id)">
           <img v-lazy="item.picUrl" alt />
           <p>{{item.name}}</p>
         </li>
@@ -25,6 +25,11 @@ export default {
       type: String,
       default: '',
       require: true
+    }
+  },
+  methods: {
+    selectItem (id) {
+      this.$emit('select', id)
     }
   }
 }
