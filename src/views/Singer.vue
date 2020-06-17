@@ -1,6 +1,6 @@
 <template>
 <div class="singer">
-  singer
+  singer,singer
 </div>
 </template>
 
